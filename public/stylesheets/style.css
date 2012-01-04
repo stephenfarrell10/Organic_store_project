@@ -1,0 +1,15 @@
+body {
+   font-family: Helvetica, Geneva, Arial, sans-serif;
+   font-size: small;
+   font-color: #000;
+   background-color: none;
+}
+a:link, a:active, a:visited {
+   color: #CD0000;
+}
+
+
+ .cart_title {
+ font: 120% bold;
+ }
+

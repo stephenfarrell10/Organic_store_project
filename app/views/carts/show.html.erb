@@ -1,0 +1,31 @@
+  <% if notice %>
+<p id="notice"><%= notice %></p>
+  <%end%>
+
+<div align="center">
+
+<h2>Cart</h2>
+<ul>
+
+ <% for item in @cart.line_items %>
+  <li><%= item.quantity%>&times; <%= item.product.name%></li>
+  <% end %>
+
+  <br />
+
+     Total Price: <%= number_to_currency( @cart.total_price, :unit => '&euro;') %><br/>
+  <br />
+  <br />
+  <%=button_to 'delete cart', @cart,:method => :delete, :confirm => 'are you sure?'%>
+  <br/>
+
+
+  <%= button_to "Checkout", new_order_path, method: :get %>
+</ul>
+
+<br />
+<%= link_to 'continue shopping', products_path %>     <%= link_to "Checkout", new_order_path, method: :get %>
+
+ </div>
+
+

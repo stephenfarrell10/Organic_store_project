@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OrganicShop2</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+ | <%= link_to "Product Catalogue", products_path %> |
+
+
+<%= link_to "Home", :controller => "welcome", :action => "home" %> |
+  <%= link_to "Your Cart", :controller => "carts", :action => "your_cart"  %> |
+
+
+ <div id='header'>
+<% if logged_in? %>
+<%= current_user.email %> |
+<%= link_to 'Logout', logout_path %> |
+
+
+
+
+<% else %>
+<%= link_to "Login", login_path %> |
+
+<% end %>
+
+   <% if not logged_in? %>
+   <%= link_to "New User", new_user_path %> |
+    <%	 end %>
+
+   <% if current_user.admin %>
+<%= link_to 'Orders', orders_path %> |
+<%= link_to "Admin", :controller => "admin", :action => "index"  %> |
+<%= link_to "User", :controller => "users" , :action =>"index" %>  |
+<%= link_to 'New', new_user_url%>
+
+
+  <%end %>
+
+</div>
+ <div>
+<%= yield%>
+  </div>
+
+</body>
+</html>

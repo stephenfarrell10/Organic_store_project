@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>password:</b>
+  <%= @user.hashed_password%>
+</p>
+
+
+<p><b>Forname</b>
+<%= @user.forename%>
+ </p>
+
+ <p><b>Surname</b>
+   <%= @user.surname%>
+ </p>
+ <p><b>Occupation</b>
+   <%= @user.occupation%>
+ </p>
+
+   <p><b>Town</b>
+   <%= @user.town%>
+ </p>
+
+ <p>
+<b>Admin</b>
+<%= @user.admin %>
+   </p>
+  <p>  <b>User Id</b>
+    <%= @user.id%>
+
+
+  </p>
+
+
+<%= link_to 'Back', users_path %>
+
+  <%= link_to 'edt', user_path%>
